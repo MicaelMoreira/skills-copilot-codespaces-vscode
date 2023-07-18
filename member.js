@@ -1,15 +1,12 @@
-function skillMember() {
-  return {
-    restrict: 'E',
-    scope: {
-      member: '=',
-      skill: '='
-    },
-    templateUrl: 'skill-member.html',
-    controller: function($scope) {
-      $scope.getSkillLevel = function() {
-        return $scope.member.skills[$scope.skill];
-      };
-    }
-  };
+function skillsMember() {
+    return {
+        restrict: 'E',
+        templateUrl: 'modules/skills/member.html',
+        controller: 'SkillsMemberController',
+        controllerAs: 'vm',
+        bindToController: true,
+        scope: {
+            member: '='
+        }
+    };
 }
