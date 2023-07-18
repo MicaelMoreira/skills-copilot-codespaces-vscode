@@ -1,10 +1,15 @@
 function skillMember() {
-    var member = {
-        name: "John",
-        age: 30,
-        sayName: function() {
-            alert(this.name);
-        }
-    };
-    return member;
+  return {
+    restrict: 'E',
+    scope: {
+      member: '=',
+      skill: '='
+    },
+    templateUrl: 'skill-member.html',
+    controller: function($scope) {
+      $scope.getSkillLevel = function() {
+        return $scope.member.skills[$scope.skill];
+      };
+    }
+  };
 }
